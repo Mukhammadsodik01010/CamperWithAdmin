@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 var cors = require("cors");
 const router = require("./Routes/CamperRoutes");
+const CampingRouter = require("./Routes/CampingPlaceRoute");
+const userRouter = require("./Routes/userRoute");
+
 
 const app = express();
 app.use(express.json());
@@ -10,6 +13,8 @@ app.use(cors());
 
 
 app.use("/main", router)
+app.use("/main-camping", CampingRouter)
+app.use("/main-user", userRouter)
 
 mongoose
   .connect("mongodb://localhost:27017/camper", {
