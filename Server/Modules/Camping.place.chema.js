@@ -8,9 +8,9 @@ const CampingPlace = new mongoose.Schema(
             required:true
         },
         location:String,
-        phoneNumber:String,
         openingHour:String,
         closingHour:String,
+        phoneNumber:String,
         website:String,
         description:String
     },
@@ -18,5 +18,7 @@ const CampingPlace = new mongoose.Schema(
         timestamps:true
     }
 )
+
+
 
 module.exports = mongoose.model("CampingProduct", CampingPlace)

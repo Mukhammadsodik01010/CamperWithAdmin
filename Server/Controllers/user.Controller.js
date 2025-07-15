@@ -4,13 +4,13 @@ const UserProduct = require('../Modules/registerSchema')
 
 
 const AddUser = async (req, res)=>{
-    const {name, email, password}=req.body;
+    const {name, email, password, reminder}=req.body;
     try {
         const existingUser = await UserProduct.findOne({email})
         if(existingUser){
             return res.status(500).json({message:"Email already in use"})
         }
-        const user = new UserProduct({name, email, password});
+        const user = new UserProduct({name, email, password, reminder});
         await user.save()
         return res.status(201).json({message:"New user added successfully", user})
     } catch (error) {

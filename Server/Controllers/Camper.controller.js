@@ -1,14 +1,44 @@
-const { json } = require("express");
 const Product = require("../Modules/CamperSchema");
 
 const CaravanAdd = async (req, res) => {
-  const { name, brand, cost, year, ranking, berths, length, location, type } =
-    req.body;
+  const {
+    type,
+    name,
+    brand,
+    ranking,
+    cost,
+    company,
+    lycynce,
+    people,
+    location,
+    year,
+    description1,
+    description2,
+    description3,
+    description4,
+    description5,
+  } = req.body;
   try {
     if(!name){
         return res.status(404).json({msg: "Write Product name first"})
     }
-    const product = new Product({ name, brand, cost, year, ranking, berths, length, location, type })
+    const product = new Product({
+      type,
+      name,
+      brand,
+      ranking,
+      cost,
+      company,
+      lycynce,
+      people,
+      location,
+      year,
+      description1,
+      description2,
+      description3,
+      description4,
+      description5,
+    });
     await product.save()
     return res.status(200).json({msg: "Product saved Successfully", product})
   } catch (error) {

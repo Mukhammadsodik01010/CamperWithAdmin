@@ -1,21 +1,26 @@
 const mongoose = require("mongoose");
 
-
 const AddNewCamper = new mongoose.Schema(
-    {
+  {
+    type: String,
     name: String,
     brand: String,
-    cost: Number,
-    year: Number,
-    ranking: Number,
-    berths: Number,
-    length: String,
+    ranking: String,
+    cost: String,
+    company: String,
+    lycynce: String,
+    people: String,
     location: String,
-    type: String,
-    },
-    {
-        timestamps: true,
-    }
-)
+    year: String,
+    description1: String,
+    description2: String,
+    description3: String,
+    description4: String,
+    description5: String,
+  },
+  {
+    timestamps: true,
+  }
+);
 
-module.exports = mongoose.model("Product", AddNewCamper)
+module.exports = mongoose.model("Product", AddNewCamper);

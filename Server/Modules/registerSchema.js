@@ -14,6 +14,7 @@ const RegisterSchema = new mongoose.Schema({
   password: {
     type: String,
   },
+  reminder:String,
 },
 {
   timestamps:true,

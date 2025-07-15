@@ -3,12 +3,28 @@ const CampingProduct = require('../Modules/Camping.place.chema')
 
 
 const AddPlace = async (req, res) =>{
-    const {name, location, phoneNumber, openingHour, closingHour, website, description}= req.body;
+    const {
+        name,
+        location,
+        openingHour,
+        closingHour,
+        phoneNumber,
+        website,
+        description,
+    }= req.body;
     try {
         if(!name){
             return res.status(404).json({msg:"Write name first"})
         }
-        const campingProduct = new CampingProduct({name, location, phoneNumber, openingHour, closingHour, website, description})
+        const campingProduct = new CampingProduct({
+          name,
+          location,
+          openingHour,
+          closingHour,
+          phoneNumber,
+          website,
+          description,
+        });
         await campingProduct.save()
         res.json({msg:"New product added successfully"})
     } catch (error) {
