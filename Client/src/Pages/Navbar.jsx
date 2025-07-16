@@ -2,6 +2,7 @@ import React from "react";
 import LogoImg from "../assets/Camper.svg";
 import DownArrow from "../assets/down-arrow.svg";
 import CartImg from "../assets/cart.svg";
+import UserImg from "../assets/user.svg";
 import {
   LeftBurgerButton,
   NavbarMain,
@@ -15,7 +16,6 @@ import {
 import { Link } from "react-router-dom";
 import TemporaryDrawer from "./DrowerLeft";
 import TemporaryDrawerRight from "./DrowerRight";
-import DashboardComp from "./dashboard";
 
 const Navbarcomponent = () => {
   return (
@@ -62,7 +62,9 @@ const Navbarcomponent = () => {
         </NavMid>
         <NavRight>
           <img src={CartImg} alt="Arrow" />
-          <DashboardComp />
+          <Link className="NavLink" to={"/signin"}>
+            <img src={UserImg} alt="User Image" />
+          </Link>
           <NavRightEng>
             <p>Eng</p>
             <img src={DownArrow} alt="Arrow" />
